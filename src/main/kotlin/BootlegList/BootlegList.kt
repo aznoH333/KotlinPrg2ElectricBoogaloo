@@ -56,12 +56,14 @@ class BootlegList (private var values: Array<Int> = Array(0){0}){
     }
 
     private fun update(){
-        values += queue
-        queue = Array(0){0}
+        if (!queue.isEmpty()){
+            values += queue
+            queue = Array(0){0}
+        }
     }
 
     fun clear(){
-        values = Array(0){0};
+        values = Array(0){0}
         queue = Array(0){0}
     }
 
